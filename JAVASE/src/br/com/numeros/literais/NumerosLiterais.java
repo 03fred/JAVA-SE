@@ -17,7 +17,17 @@ public class NumerosLiterais {
 		System.out.println();
 
 
+		System.out.printf("Um número inteiro: %d", 123);
+		System.out.println();
+		System.out.printf("Um número decimal: %f", 1.23);
+		System.out.println();
+		System.out.printf("Um número inteiro: %b", true);
+		System.out.println();
+
+		System.out.printf("Dois números :\t\t%d e %d \n", 2,2);
+		System.out.printf("O número %d é equivalente  a letra %c \n", 1 , 'A');
 		
+
 		
 	}
 
