@@ -1,12 +1,13 @@
 package br.com.cap5.introducaoApiJava;
 
 import java.io.PrintStream;
+import java.util.Random;
 import java.util.Scanner;
 
 public class AnalisadorDeTexto {
 
 	static PrintStream saida = System.out;
-	
+	static Random acaso = new Random();
 	 static Scanner scan = new Scanner(System.in);
 	
 	public static void main(String[] args) {
