@@ -16,8 +16,23 @@ public class Exercicios extends AnalisadorDeTexto {
 		//exercicio08();
 		//exercicio09();
 		//exercicio10();
-		exercicio11();
+		//exercicio11();
+		exercicio12();
 		
+	}
+
+	private static void exercicio12() {
+		saida.println("\nDigite o diametro  " );
+        double diametro = scan.nextDouble();
+        double raio = diametro / 2;
+        double circuferencia = diametro *  Math.PI;
+        double area = Math.PI * Math.pow(raio,2);
+ 		saida.println("\n raio  " + raio);
+ 		saida.println("\n circunferencia  " + circuferencia);
+ 		saida.println("\n area  " + area);
+
+	
+	
 	}
 
 	public static void exercicio11() {
