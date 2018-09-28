@@ -19,18 +19,17 @@ public class AnalisadorDeTexto {
 		saida.println("\n Informe o  nome de um artista: \t");
 		artista = scan.nextLine();
 		
-		saida.println("Análise do nome: \t\t" + artista);
+		saida.println("AnÃ¡lise do nome: \t\t" + artista);
 		
-		saida.println("Conversão para maiúsculo \t "+  artista.toUpperCase());
-		saida.println("Conversão para minúsculo \t "+  artista.toLowerCase());
-		saida.println("Substituindo espaços por _ \t"+  artista.replace("","_"));
+		saida.println("ConversÃ£o para maiÃºsculo \t "+  artista.toUpperCase());
+		saida.println("ConversÃ£o para maiÃºsculo \t "+  artista.toLowerCase());
+		saida.println("Substituindo espaÃ§os por _ \t"+  artista.replace("","_"));
 		saida.println("Quantidade de caracteres \t "+  artista.length());
 		saida.println("Primeira letra \t\t "+  artista.charAt(0));
-		saida.println("Posição da primeira letra a \t "+  artista.indexOf("a"));
-		saida.println("Posição da ultima letra a \t "+  artista.lastIndexOf("a"));
+		saida.println("PosiÃ§Ã£o da primeira letra a \t "+  artista.indexOf("a"));
+		saida.println("PosiÃ§Ã£o da ultima letra a \t "+  artista.lastIndexOf("a"));
 		saida.println("O primeiro nome \t "+  artista.substring(0,artista.indexOf(" ")));
-		saida.println("O último nome \t "+  artista.substring(artista.lastIndexOf(" ") + 1,artista.length()));
-
+		saida.println("O Ãšltimo nome \t "+  artista.substring(artista.lastIndexOf(" ") + 1,artista.length()));
 
 
 

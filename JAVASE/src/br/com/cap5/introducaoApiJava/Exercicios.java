@@ -38,14 +38,14 @@ public class Exercicios extends AnalisadorDeTexto {
 	public static void exercicio11() {
 
 		int num = acaso.nextInt((90 - 65)+1)+65;
-		saida.println("\nNúmero sorteado  " + num );
+		saida.println("\nNï¿½mero sorteado  " + num );
          char caracter = (char)num;
  		saida.println("\n Caracter correspondente  " + caracter );
 
 	}
 
 	public static void exercicio01() {
-		saida.println("Informe seu CEP (SÓ NÚMEROS)");
+		saida.println("Informe seu CEP (Sï¿½ Nï¿½MEROS)");
 		int cep = scan.nextInt();
 
 		String cepstring = String.valueOf(cep);
@@ -56,7 +56,7 @@ public class Exercicios extends AnalisadorDeTexto {
 	}
 
 	public static void exercicio02() {
-		saida.println("Informe seu CEP (SÓ NÚMEROS)");
+		saida.println("Informe seu CEP (Sï¿½ Nï¿½MEROS)");
 		String cep = scan.nextLine();
 		saida.println(cep.replaceAll("-", ""));
 	}
@@ -139,7 +139,7 @@ public class Exercicios extends AnalisadorDeTexto {
 
 		double nota1 = Double.parseDouble(JOptionPane.showInputDialog("DIGITE A PRIMEIRA NOTA"));
 		double nota2 = Double.parseDouble(JOptionPane.showInputDialog("DIGITE A SEGUNDA NOTA"));
-		JOptionPane.showMessageDialog(null," SUA MÉDIA FINAL FOI :" + (nota1 + nota2) / 2);
+		JOptionPane.showMessageDialog(null," SUA MÃ‰DIA FINAL FOI :" + (nota1 + nota2) / 2);
 
 	}
 
