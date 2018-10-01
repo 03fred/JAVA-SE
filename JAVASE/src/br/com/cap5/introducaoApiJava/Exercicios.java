@@ -6,7 +6,7 @@ public class Exercicios extends AnalisadorDeTexto {
 
 	public static void main(String[] args) {
 
-		// exercicio01();
+		 exercicio01();
 		// exercicio02();
 		// exercicio03();
 		// exercicio04();
@@ -17,7 +17,7 @@ public class Exercicios extends AnalisadorDeTexto {
 		//exercicio09();
 		//exercicio10();
 		//exercicio11();
-		exercicio12();
+		//exercicio12();
 		
 	}
 
