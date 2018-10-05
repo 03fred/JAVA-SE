@@ -2,13 +2,91 @@ package br.com.cap8.estruturaRepeticao;
 
 import javax.swing.JOptionPane;
 
-
 public class Practice {
 
 	public static void main(String[] args) {
 
-		//exercicio01();
-             exercicio02();
+		// exercicio01();
+		// exercicio02();
+		// exercicio04();
+		exercicio05();
+		
+	}
+
+	public static void exercicio05() {
+
+		boolean verifica;
+		String str = "Informe seu salário";
+		str = JOptionPane.showInputDialog(str);
+		str = str.trim();
+		verifica = verificaCPF(str);
+		if(!verifica) {
+			
+			do {
+			     str = "Informe seu salário";
+				str = JOptionPane.showInputDialog(str);
+				verifica = verificaCPF(str);
+			}while (!verifica);
+		}else{
+			double salario =  Double.parseDouble(str);
+		}
+		
+		str = "Informe seu nome";
+		str = JOptionPane.showInputDialog(str);
+		str = str.trim();
+		
+		if(str.length() >= 2 && str.length() <= 30) {
+			verifica = verifica(str);
+			if(!verifica) {
+				
+				do {
+				     str = "Informe seu nome";
+					str = JOptionPane.showInputDialog(str);
+					verifica = verifica(str);
+				}while (!verifica);
+			}else{
+				String nome = str;
+			}
+						
+			
+		}else {
+			
+			while(str.length() <= 2 || str.length() > 30) {
+				str = "Informe seu nome";
+				str = JOptionPane.showInputDialog(str);
+				
+			}
+		}
+		
+		
+		
+		
+	}
+
+	public static void exercicio04() {
+
+		String str;
+		double peso = 0, altura = 0, imc;
+
+		while (true) {
+
+			str = " Informe seu peso";
+			peso = Double.parseDouble(JOptionPane.showInputDialog(str));
+			str = " Informe sua altura";
+			altura = Double.parseDouble(JOptionPane.showInputDialog(str));
+
+			if ((peso > 1 && peso <= 300) && (altura > 0.1 && altura <= 2.5))
+				break;
+
+		}
+
+		imc = peso / Math.pow(altura, 2);
+
+		if (imc >= 16 && imc <= 16.9)
+			JOptionPane.showMessageDialog(null, " Muito abaixo do peso \nSeu imc deu " + imc);
+		if (imc >= 18.5 && imc <= 24.9)
+			JOptionPane.showMessageDialog(null, "Peso normal \nSeu imc deu " + imc);
+
 	}
 
 	public static void exercicio01() {
@@ -19,24 +97,21 @@ public class Practice {
 		str = " Informe seu nome";
 		nome = JOptionPane.showInputDialog(str);
 
-	  
 		if (nome.length() < 5 || nome.length() > 50) {
 			do {
 				nome = "";
-				str = " O nome deverá ser preenchido";
+				str = " O nome deverÃ¡ ser preenchido";
 				nome = JOptionPane.showInputDialog(str);
-				
-				
-			} while (nome.length() <  5 || nome.length() > 50 );
+
+			} while (nome.length() < 5 || nome.length() > 50);
 		}
-	
-		
-	    str = nome.trim();
+
+		str = nome.trim();
 		boolean verifica = verifica(str);
 
 		if (verifica == false) {
 			do {
-				str = " O nome deverá conter apenas letras";
+				str = " O nome deverÃ¡ conter apenas letras";
 				str = JOptionPane.showInputDialog(str);
 				verifica = verifica(str);
 			} while (verifica != true);
@@ -46,34 +121,32 @@ public class Practice {
 
 	public static void exercicio02() {
 
-		boolean verifica ;
+		boolean verifica;
 		String str = "Informe seu cpf";
-		
+
 		String cpfString = JOptionPane.showInputDialog(str);
-        verifica = verificaCPF(cpfString);
-        cpfString =  cpfString.trim();
-        
-       if(!verifica)
-       {
-    	   do {
-				str = " O cpf deverá conter apenas números";
+		verifica = verificaCPF(cpfString);
+		cpfString = cpfString.trim();
+
+		if (!verifica) {
+			do {
+				str = " O cpf deverÃ¡ conter apenas nÃºmeros";
 				cpfString = JOptionPane.showInputDialog(str);
 				verifica = verificaCPF(cpfString);
 			} while (verifica != true);
-       }
-    	 
-	        if(cpfString.length() != 11) {
-	        	do {
-	             cpfString = JOptionPane.showInputDialog("cpf deve conter 11 digitos");
+		}
 
-	        	}while(cpfString.length() != 11);
-	        	
-	        	JOptionPane.showMessageDialog(null, "CPF VÁLIDO","mensagem",1);
-	        }
-	    
-	       
+		if (cpfString.length() != 11) {
+			do {
+				cpfString = JOptionPane.showInputDialog("cpf deve conter 11 digitos");
+
+			} while (cpfString.length() != 11);
+
+			JOptionPane.showMessageDialog(null, "CPF VÃ�LIDO", "mensagem", 1);
+		}
+
 	}
-	
+
 	public static boolean verifica(String nome) {
 		char[] c = nome.toCharArray();
 		boolean d = true;
@@ -84,10 +157,9 @@ public class Practice {
 				d = false;
 				break;
 			}
-		
+
 		return d;
 	}
-	
 
 	public static boolean verificaCPF(String cpf) {
 		char[] c = cpf.toCharArray();
@@ -99,10 +171,9 @@ public class Practice {
 				d = false;
 				break;
 			}
-		
+
 		System.out.println(d);
 		return d;
 	}
-	
-	
+
 }
