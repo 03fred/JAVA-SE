@@ -10,57 +10,75 @@ public class Practice {
 		// exercicio02();
 		// exercicio04();
 		exercicio05();
-		
+
 	}
 
 	public static void exercicio05() {
-
+		double salario = 0, inss = 0, imposto = 0;
+		String nome = "";
 		boolean verifica;
 		String str = "Informe seu salário";
 		str = JOptionPane.showInputDialog(str);
 		str = str.trim();
 		verifica = verificaCPF(str);
-		if(!verifica) {
-			
+		if (!verifica) {
+
 			do {
-			     str = "Informe seu salário";
+				str = "Informe seu salário";
 				str = JOptionPane.showInputDialog(str);
 				verifica = verificaCPF(str);
-			}while (!verifica);
-		}else{
-			double salario =  Double.parseDouble(str);
+			} while (!verifica);
+		} else {
+			salario = Double.parseDouble(str);
 		}
-		
+
 		str = "Informe seu nome";
 		str = JOptionPane.showInputDialog(str);
 		str = str.trim();
-		
-		if(str.length() >= 2 && str.length() <= 30) {
+
+		if (str.length() >= 2 && str.length() <= 30) {
 			verifica = verifica(str);
-			if(!verifica) {
-				
+			if (!verifica) {
+
 				do {
-				     str = "Informe seu nome";
+					str = "Informe seu nome";
 					str = JOptionPane.showInputDialog(str);
 					verifica = verifica(str);
-				}while (!verifica);
-			}else{
-				String nome = str;
+				} while (!verifica);
+			} else {
+				nome = str;
 			}
-						
-			
-		}else {
-			
-			while(str.length() <= 2 || str.length() > 30) {
+
+		} else {
+
+			while (str.length() <= 2 || str.length() > 30) {
 				str = "Informe seu nome";
 				str = JOptionPane.showInputDialog(str);
-				
+
 			}
 		}
-		
-		
-		
-		
+
+		if (salario < 965)
+			inss =  ((salario * 8) / 100);
+		if (salario >= 965.68 && salario <= 1609.45)
+			inss = ((salario * 9) / 100);
+		if (salario >= 1609.46 && salario <= 3218.90)
+			inss = ((salario * 11) / 100);
+		if (salario > 3218.90)
+			salario =  354.07;
+		if (salario >= 1434.01 && salario <= 2150)
+			imposto =  ((salario * 7.5) / 100);
+		if (salario >= 2150.01 && salario <= 2886)
+			imposto =  ((salario * 15) / 100);
+		if (salario >= 2886.01 && salario <= 3582)
+			imposto = ((salario * 22.5) / 100);
+		if (salario > 3582)
+			imposto =  ((salario * 27.5) / 100);
+
+		double totalSalario = salario - (imposto + inss);
+		JOptionPane.showMessageDialog(null, "O funcionário " + nome + "\n  desconto inss " + inss + "$ \n desconto imposto de renda "+imposto+
+				"\n salario com os desconto " + totalSalario);
+
 	}
 
 	public static void exercicio04() {
