@@ -42,7 +42,7 @@ public class Contatos {
 					break;
 				str = str.trim();
 				if (str.length() >= 2 && str.length() <= 50) {
-					lista[i - 1][0] = str;
+					lista[i - 1][1] = str;
 					break;
 				}
 
