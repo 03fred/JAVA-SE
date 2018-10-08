@@ -8,13 +8,12 @@ public class Practice {
 
 		// exercicio01();
 		// exercicio02();
-<<<<<<< HEAD
 		//exercicio03();
 		exercicio04();
 
 	}
 
-	public static void exercicio04() {
+	public static void exercicio06() {
 		String str;
 		double peso = 0, altura =0 ;
 		do {
@@ -52,7 +51,6 @@ public class Practice {
 		
 		
 		
-=======
 		// exercicio04();
 		exercicio05();
 
@@ -150,7 +148,6 @@ public class Practice {
 		if (imc >= 18.5 && imc <= 24.9)
 			JOptionPane.showMessageDialog(null, "Peso normal \nSeu imc deu " + imc);
 
->>>>>>> 264274fe0411343663a8fc8c71392e0a06d8f526
 	}
 
 	public static void exercicio01() {
@@ -194,11 +191,8 @@ public class Practice {
 
 		if (!verifica) {
 			do {
-<<<<<<< HEAD
 				str = " O cpf deverá conter apenas números";
-=======
 				str = " O cpf deverÃ¡ conter apenas nÃºmeros";
->>>>>>> 264274fe0411343663a8fc8c71392e0a06d8f526
 				cpfString = JOptionPane.showInputDialog(str);
 				verifica = verificaCPF(cpfString);
 			} while (verifica != true);
@@ -210,11 +204,7 @@ public class Practice {
 
 			} while (cpfString.length() != 11);
 
-<<<<<<< HEAD
 			JOptionPane.showMessageDialog(null, "CPF VÁLIDO", "mensagem", 1);
-=======
-			JOptionPane.showMessageDialog(null, "CPF VÃ�LIDO", "mensagem", 1);
->>>>>>> 264274fe0411343663a8fc8c71392e0a06d8f526
 		}
 
 	}
