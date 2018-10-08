@@ -12,7 +12,7 @@ public class Exercice {
 	public static void main(String[] args) {
 
 		//exercicio01();
-          exercicio02();
+         //exercicio02();
 	}
 
 	public static void exercicio01() {
@@ -48,4 +48,12 @@ public class Exercice {
 		saida.println(nome[it]);
 	}
 
+	
+	public static void exercicio03() {
+	
+		
+		
+		
+		
+	}
 }
