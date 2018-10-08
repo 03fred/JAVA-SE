@@ -1,4 +1,4 @@
-package br.com.cp9.vetoresMatrizes;
+package br.com.cap9.vetoresMatrizes;
 
 public class Matriz {
 
