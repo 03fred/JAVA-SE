@@ -2,7 +2,7 @@ package br.com.cap10.exception;
 
 import javax.swing.JOptionPane;
 
-public class Excessao {
+public class Excecao {
 
 	public static void main(String[] args) {
 		String str = " Informe um número inteiro";

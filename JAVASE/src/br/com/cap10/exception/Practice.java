@@ -9,41 +9,77 @@ public class Practice {
 	public static void main(String[] args) {
 
 		// exercicio01();
-		exercicio02();
+		// exercicio02();
+		exercicio04();
 
 	}
 
+	public static void exercicio04() {
+
+		String str = "Digite um nÃºmero";
+		int numero = 1;
+
+		while(!verifica) {
+			try {
+				numero = Integer.parseInt(JOptionPane.showInputDialog(null, str));
+				if (numero <= 0) {
+					str = "O nÃºmero deve ser maior que 0";
+					throw new IllegalArgumentException(str);
+				}
+				int valor = 0;
+				for(int i = 1;i < numero;i++) {
+					if(numero % i == 0) {
+						valor = valor + i;
+						System.out.println(valor);
+					}					
+					
+				}
+				if(valor == numero) {
+					JOptionPane.showMessageDialog(null, "NÃºmero perfeito");
+					verifica = true;
+				}
+				
+				
+			} catch (NumberFormatException nb) {
+				JOptionPane.showMessageDialog(null, "NÃºmero invÃ¡lido");
+		
+		}catch(IllegalArgumentException ie) {
+			JOptionPane.showMessageDialog(null, ie.getMessage(),"error" ,0);
+		}
+		}
+	}
+	
+	
 	public static void exercicio02() {
-		String str = "Digite um número";
+		String str = "Digite um nï¿½mero";
 		int numero = 0;
 
-		while (numero > 1 || numero < 200000 ) {
+		while (numero > 1 || numero < 200000) {
 
-			str = "Informe um número inteiro";
+			str = "Informe um nï¿½mero inteiro";
 			str = JOptionPane.showInputDialog(null, str);
-			if (str.length() <= 0)System.exit(0);
+			if (str.length() <= 0)
+				System.exit(0);
 			try {
 				numero = Integer.parseInt(str);
 				int cont = 0;
 				for (int i = 1; i <= numero; i++) {
 					if (numero % i == 0)
 						cont++;
-
 				}
 
 				if (cont > 2)
-					JOptionPane.showMessageDialog(null, "Não é primo");
+					JOptionPane.showMessageDialog(null, "Nï¿½o ï¿½ primo");
 				else
-					JOptionPane.showMessageDialog(null, "É primo");
+					JOptionPane.showMessageDialog(null, "ï¿½ primo");
 			} catch (NumberFormatException nf) {
-				str = "Número inválido";
+				str = "Nï¿½mero invï¿½lido";
 				JOptionPane.showMessageDialog(null, str, "ERROR", 0);
 
 			}
 
-			
 		}
-		
+
 		System.exit(0);
 	}
 
@@ -54,19 +90,19 @@ public class Practice {
 		while (nome.length() < 5 || nome.length() > 50) {
 			nome = JOptionPane.showInputDialog(str);
 			if (nome.length() < 5 || nome.length() > 50)
-				JOptionPane.showMessageDialog(null, "números de caracteres inválidos", "ERROR", 0);
+				JOptionPane.showMessageDialog(null, "nï¿½meros de caracteres invï¿½lidos", "ERROR", 0);
 			if (str == null)
 				System.exit(0);
 
 			verifica = verifica(nome);
 			if (!verifica) {
 				nome = "";
-				JOptionPane.showMessageDialog(null, "campo nome não aceita números", "ERROR", 0);
+				JOptionPane.showMessageDialog(null, "campo nome nï¿½o aceita nï¿½meros", "ERROR", 0);
 			}
 
 		}
 
-		str = "Digite seu salário";
+		str = "Digite seu salï¿½rio";
 		double salario = 0;
 		verifica = false;
 
@@ -75,12 +111,12 @@ public class Practice {
 
 				salario = Double.parseDouble(JOptionPane.showInputDialog(str));
 				if (salario < 465) {
-					str = "O número deve ser maior ou igual a 465";
+					str = "O nÃºmero deve ser maior ou igual a 465";
 					throw new IllegalArgumentException(str);
 				}
 				verifica = true;
 			} catch (NumberFormatException nbfe) {
-				JOptionPane.showMessageDialog(null, "Número não condiz com o formato do campo", "ERROR", 0);
+				JOptionPane.showMessageDialog(null, "Nï¿½mero nï¿½o condiz com o formato do campo", "ERROR", 0);
 			} catch (IllegalArgumentException iae) {
 				JOptionPane.showMessageDialog(null, iae.getMessage(), "error", 0);
 
