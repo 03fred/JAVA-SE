@@ -1,15 +1,58 @@
 package br.com.cap10.exception;
 
+import java.io.PrintStream;
+
 import javax.swing.JOptionPane;
 
 public class Practice {
 
 	static boolean verifica;
+	static PrintStream saida = System.out;
 
 	public static void main(String[] args) {
 
 		// exercicio01();
-		exercicio02();
+		// exercicio02();
+		//exercicio03();
+
+	}
+
+	public static void exercicio03() {
+
+		String str = "Digite um número";
+		long numero = 1, at = 1, ant = 1, p;
+		while (true) {
+			str = "Informe um número inteiro";
+			str = JOptionPane.showInputDialog(null, str);
+			if (str.length() <= 0)
+				System.exit(0);
+			try {
+				numero = Integer.parseInt(str);
+
+				if(numero > 92) {
+					str = "O número deve estar entre 1 e 92";
+					throw new IllegalArgumentException(str);
+					
+				}
+				for (int i = 1; i < numero; i++) {
+
+					p = at + ant;
+					if(p > 0) {
+					saida.println(p);
+					ant = at;
+					at = p;
+					}
+				}
+
+			} catch (NumberFormatException nbe) {
+				JOptionPane.showMessageDialog(null, "Digite apenas números", "ERROR", 0
+
+				);
+
+			}catch(IllegalArgumentException iae) {
+				JOptionPane.showMessageDialog(null, iae.getMessage());
+			}
+		}
 
 	}
 
@@ -17,11 +60,12 @@ public class Practice {
 		String str = "Digite um número";
 		int numero = 0;
 
-		while (numero > 1 || numero < 200000 ) {
+		while (numero > 1 || numero < 200000) {
 
 			str = "Informe um número inteiro";
 			str = JOptionPane.showInputDialog(null, str);
-			if (str.length() <= 0)System.exit(0);
+			if (str.length() <= 0)
+				System.exit(0);
 			try {
 				numero = Integer.parseInt(str);
 				int cont = 0;
@@ -41,9 +85,8 @@ public class Practice {
 
 			}
 
-			
 		}
-		
+
 		System.exit(0);
 	}
 
