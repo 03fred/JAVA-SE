@@ -1,6 +1,6 @@
 package br.com.cap10.exception;
-
 import javax.swing.JOptionPane;
+
 
 public class Practice {
 
@@ -10,8 +10,81 @@ public class Practice {
 
 		// exercicio01();
 		// exercicio02();
-		exercicio04();
+		// exercicio04();
+		exercicio05();
+	}
 
+	public static void exercicio05() {
+
+		int indice = 0;
+		String[] nomes = new String[100];
+		int[] idade = new int[100];
+		char[] statusCivil = new char[100];
+		String str, nome = "";
+
+		while (!verifica) {
+
+			while (true) {
+				try {
+					str = "Digite o nome";
+					nome = JOptionPane.showInputDialog(str);
+
+					if (nome.length() <= 0)
+					{
+						
+						for(int i = 0; i< nomes.length;i++) {
+							
+						String mensagem = nomes[i] + "\t"+ String.valueOf(statusCivil[i]);
+						System.out.println(mensagem);
+						}
+						
+						System.exit(0);
+					}
+						
+						
+					if (nome.length() > 50 || nome.length() < 5) {
+						str = "nome deve ter entre 5 e 50 caracteres";
+						throw new IllegalArgumentException(str);
+					}
+
+					if (verifica(nome)) {
+
+						nomes[indice] = nome;
+						System.out.println(nomes[indice]);
+						break;
+					}
+				} catch (IllegalArgumentException iae) {
+					JOptionPane.showMessageDialog(null, iae.getMessage(), "error", 0);
+
+				}
+			}
+			while (idade[indice] > 100 || idade[indice] < 18) {
+				str = "digite sua idade entre 18 e 100 anos";
+				str = JOptionPane.showInputDialog(str);
+				if (!verifica(str)) {
+					idade[indice] = Integer.parseInt(str);
+
+				} else
+					JOptionPane.showMessageDialog(null, "Idade deve ter apenas números", "ERROR", 0);
+
+			}
+
+			while (true) {
+
+				str = "digite seu status S solteiro C casado D divorciado N namorando";
+				str = JOptionPane.showInputDialog(str);
+				str = str.trim();
+				str = str.toUpperCase();
+				char teste = str.charAt(0);
+				System.out.println(teste);
+				if (teste == 'S' || teste == 'N' || teste == 'C' || teste == 'D') {
+					statusCivil[indice] = str.charAt(0);
+					break;
+				}
+			}
+
+			indice++;
+		}
 	}
 
 	public static void exercicio04() {
@@ -19,7 +92,7 @@ public class Practice {
 		String str = "Digite um número";
 		int numero = 1;
 
-		while(!verifica) {
+		while (!verifica) {
 			try {
 				numero = Integer.parseInt(JOptionPane.showInputDialog(null, str));
 				if (numero <= 0) {
@@ -27,29 +100,28 @@ public class Practice {
 					throw new IllegalArgumentException(str);
 				}
 				int valor = 0;
-				for(int i = 1;i < numero;i++) {
-					if(numero % i == 0) {
+				for (int i = 1; i < numero; i++) {
+					if (numero % i == 0) {
 						valor = valor + i;
 						System.out.println(valor);
-					}					
-					
+					}
+
 				}
-				if(valor == numero) {
+				if (valor == numero) {
 					JOptionPane.showMessageDialog(null, "Número perfeito");
 					verifica = true;
 				}
-				
-				
+
 			} catch (NumberFormatException nb) {
 				JOptionPane.showMessageDialog(null, "Número inválido");
-		
-		}catch(IllegalArgumentException ie) {
-			JOptionPane.showMessageDialog(null, ie.getMessage(),"error" ,0);
-		}
+
+			} catch (IllegalArgumentException ie) {
+				JOptionPane.showMessageDialog(null, ie.getMessage(), "error", 0);
+			}
+
 		}
 	}
-	
-	
+
 	public static void exercicio02() {
 		String str = "Digite um n�mero";
 		int numero = 0;
