@@ -20,11 +20,13 @@ public class Pessoa {
 		String[] partes = nome.split(" ");
 		
 		if(partes.length < 2)iniciais = "nome possui apenas a inicial " +nome.charAt(0);
+		
 		else {
-			for(String s: partes) {
-				char c = s.charAt(0);
-				iniciais += " "+String.valueOf(c);
-
+			for(int i = 0; i < partes.length;i++) {
+				if(partes[i].length() > 3) {
+				char c = partes[i].charAt(0);
+				iniciais += " "+String.valueOf(c).toUpperCase();
+				}
 			}
 			
 		}
