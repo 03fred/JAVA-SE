@@ -1,5 +1,8 @@
 package br.com.exercicios.cap3;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -8,12 +11,21 @@ import javax.swing.plaf.OptionPaneUI;
 public class ExerciciosPrintFormatacao {
 	static Scanner scan = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
 		//EXERCÍCIO 1 exercicio1();
 		//EXERCÍCIO 2 exercicio2();
         //EXERCÍCIO 3  exercicio3();
-		//exercicio4();
+		//exercicio4();t
+		//boolean x = false;
+		 //if(!x) System.out.println("oi");
+		
+		Date date = new Date();
+		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+		
+		String data = formato.format(date);
+		System.out.println(formato.parse(data));
+		
 		
 	}
 		
