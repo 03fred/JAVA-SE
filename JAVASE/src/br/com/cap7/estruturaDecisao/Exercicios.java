@@ -10,8 +10,8 @@ public class Exercicios {
 		// exercicio03();
 		//exercicio04();
 		//exercicio05();
-		//exercicio06();
-		exercicio07();
+		exercicio06();
+		//exercicio07();
 	}
 
 	public static void exercicio07() {
