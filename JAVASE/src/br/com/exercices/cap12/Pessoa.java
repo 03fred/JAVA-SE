@@ -10,9 +10,16 @@ public class Pessoa {
 	}
 
 	boolean validarNomes(String nome){
-		
-		if(nome.length() < 2 || nome.length() > 50)return false;
-		else return true;
+	    boolean d = true;
+
+		if(nome.length() < 2 || nome.length() > 50)d = false;
+
+		char[] c = nome.toCharArray();
+		    for ( int i = 0; i < c.length; i++ )
+		    	if (Character.isDigit(c[i])) {
+		            d = false;}
+	
+		    return d;
 	}
 	
 	String gerarIniciais(String nome) {
