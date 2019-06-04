@@ -15,7 +15,7 @@ public class Circulo {
 			this.circunferencia = Double.parseDouble(cf);
 			
 			if(this.circunferencia <= 0) {
-				str = "o número deve ser maior que 0";
+				str = "o nÃºmero deve ser maior que 0";
 				throw new IllegalArgumentException(str);
 				
 			}else{
@@ -26,7 +26,7 @@ public class Circulo {
 			
 
 		} catch (NumberFormatException nb) {
-			 str = "Número inválido";
+			 str = "Nï¿½mero invï¿½lido";
 			JOptionPane.showMessageDialog(null, str, "error", 0);
 			return false;
 
