@@ -6,9 +6,6 @@ public class Produto extends Pessoa {
 	private String descricao;
 	private double preco;
 	String lista;
-	
-
-	
    public String recuperarDados() {
 	   lista = lista + "\n" + this.codigo +" - " + this.descricao +" - $"+ this.preco;
 	   return lista;
