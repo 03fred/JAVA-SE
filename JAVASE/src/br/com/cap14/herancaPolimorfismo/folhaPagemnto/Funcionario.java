@@ -10,14 +10,12 @@ public abstract class Funcionario {
 
 	public abstract double calcularProventos();
 
-	@Override
 	public String toString() {
 
 		double total = calcularProventos();
 		double diferenca = total - salario;
-
 		NumberFormat nf = NumberFormat.getCurrencyInstance();
-		return "Funcionario " + matricula + ": " + nome + " - " + nf.format(salario) + " + " + nf.format(diferenca)
+		return "\nFuncionario " + matricula + ": " + nome + " - " + nf.format(salario) + " + " + nf.format(diferenca)
 				+ " = " + nf.format(total);
 
 	}
