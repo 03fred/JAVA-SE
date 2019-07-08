@@ -2,11 +2,11 @@ package br.com.cap14.herancaPolimorfismo.practice;
 
 import static javax.swing.JOptionPane.*;
 
-public class CadastroClientes {
+public class CadastroClientes  {
 
 	public static void main(String[] args) {
 
-		Cliente[] clientes = new Cliente[2];
+		Cliente clientes[] = new Cliente[2];
 
 		String str = "";
 
